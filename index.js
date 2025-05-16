@@ -100,10 +100,13 @@ function add_porcent(){
 }
 function add_vir(){
     if(tela.value){
-        tela.value += tela.innerText + vir.innerHTML
-        while(tela.value = "."){
-            vir.disabled = true
-        }
+         const ultimoNumero = tela.value.split(/[\+\-\*\/]/).pop(); // pega o último número após o operador
+
+    if (!ultimoNumero.includes(".")) {
+        tela.value += vir.innerText; // Adiciona o ponto
+    } else {
+        window.alert("Esse número já tem um ponto decimal.");
+    }
     }else{
         window.alert("Escolha um número primeiro")
     }
