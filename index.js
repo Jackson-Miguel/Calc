@@ -21,16 +21,20 @@
   };
 
 function ligar(){
-    if(botoes.disabled){
-            const botoes = document.querySelectorAll("button");
-            botoes.forEach(botao => botao.disabled = false);
-            on.disabled = false
-    }else{
-        const botoes = document.querySelectorAll("button");
-        botoes.forEach(botao => botao.disabled = true);
-        tela.value = ""
-        on.disabled = false
+    const botoes = document.querySelectorAll("button");
+     botoes.forEach(botao => botao.disabled = false);
+     on.addEventListener("click", () => {
+    const botoes = document.querySelectorAll("button");
+    const estaAtivo = Array.from(botoes).some(botao => botao !== on && !botao.disabled);
+    botoes.forEach(botao => {
+        if (botao !== on) {
+            botao.disabled = estaAtivo;
+        }
+    });
+    if (estaAtivo) {
+        tela.value = "";
     }
+});
 }
 
 function add(){
@@ -93,17 +97,24 @@ function add_multi(){
 }
 function add_porcent(){
         if(tela.value){
+            const ultimoNumero = tela.value.split(/[\+\-\*\/]/).pop();
+        if (!ultimoNumero.includes(".")) {
             tela.value += tela.innerText + porcent.innerHTML
+        }else{
+                window.alert("O número está incompleto");
+        }
         }else{
              window.alert("Escolha um número primeiro")   
         }
 }
 function add_vir(){
     if(tela.value){
-        tela.value += tela.innerText + vir.innerHTML
-        while(tela.value = "."){
-            vir.disabled = true
-        }
+            const ultimoNumero = tela.value.split("/[\+\-\*\/]/").pop();
+    if (!ultimoNumero.includes(".")) {
+        tela.value += vir.innerText;
+    } else {
+        window.alert("Erro");
+    }
     }else{
         window.alert("Escolha um número primeiro")
     }
