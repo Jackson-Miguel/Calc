@@ -90,7 +90,12 @@ function add_div(){
 }
 function add_multi(){
         if(tela.value){
+            const ultimoNumero = tela.value.split("/[\+\-\*\/]/").pop();
+        if (!ultimoNumero.includes(".")) {
             tela.value += tela.innerText + multi.value
+        }else{
+                window.alert("O número está incompleto");
+        }
         }else{
              window.alert("Escolha um número primeiro")   
         }
@@ -109,7 +114,7 @@ function add_porcent(){
 }
 function add_vir(){
     if(tela.value){
-            const ultimoNumero = tela.value.split("/[\+\-\*\/]/").pop();
+            const ultimoNumero = tela.value.split(/[\+\-\*\/]/).pop();
     if (!ultimoNumero.includes(".")) {
         tela.value += vir.innerText;
     } else {
