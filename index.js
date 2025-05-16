@@ -114,6 +114,14 @@ function add_porcent(){
 }
 function add_vir(){
     if(tela.value){
+         const ultimoNumero = tela.value.split(/[\+\-\*\/]/).pop(); // pega o último número após o operador
+
+    if (!ultimoNumero.includes(".")) {
+        tela.value += vir.innerText;
+    } else {
+        window.alert("Esse número já tem um ponto decimal.");
+    }
+
         tela.value += tela.innerText + vir.innerHTML
         while(tela.value = "."){
             vir.disabled = true
