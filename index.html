@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Calculadora</title>
+</head>
+<body onload="ligado()">
+    <div id="base">
+        <div id="base_tela">
+            <input type="text" id="tela" disabled>
+        </div>
+        <div id="btns_1">
+            <button id="btn_limpar" onclick="limpar()">C</button>
+            <button id="btn_apagar" onclick="apagar()">↩</button>
+            <button id="btn_porcent" onclick="add_porcent()">%</button>
+            <button id="btn_div" onclick="add_div()" >÷</button>
+        </div>
+        <div id="btns_2">
+            <button id="btn_7" onclick="add7()">7</button>
+            <button id="btn_8" onclick="add8()">8</button>
+            <button id="btn_9" onclick="add9()">9</button>
+            <button id="btn_X" onclick="add_multi()">x</button>
+        </div>
+        <div id="btns_3">
+            <button id="btn_4" onclick="add4()">4</button>
+            <button id="btn_5" onclick="add5()">5</button>
+            <button id="btn_6" onclick="add6()">6</button>
+            <button id="btn_-" onclick="add_sub()">-</button>
+        </div>
+        <div id="btns_4">
+            <button id="btn_1" onclick="add1()">1</button>
+            <button id="btn_2" onclick="add2()">2</button>
+            <button id="btn_3" onclick="add3()">3</button>
+            <button id="btn_m" onclick="add_soma()">+</button>
+        </div>
+        <div id="btns_5">
+            <button id="btn_on" onclick="ligar()">on/off</button>
+            <button id="btn_0" onclick="add()">0</button>
+            <button id="btn_v" onclick="add_vir()">.</button>
+            <button id="btn_i" onclick="res()">=</button>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
