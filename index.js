@@ -7,17 +7,12 @@
     var apag1 = document.getElementById("btn_apagar");
     var vir = document.getElementById("btn_v");
     var on = document.getElementById("btn_on");
-    sub.innerText = "-"
-    soma.innerText = "+"
-    porcent.innerText = "%"
-    div.value = "÷"
-    multi.value = "x"
-    vir.innerText = "."
 
   window.onload = function() {
     const botoes = document.querySelectorAll("button");
     botoes.forEach(botao => botao.disabled = true);
     on.disabled = false
+    tela.value = 0
   };
 
 function ligar(){
@@ -69,49 +64,88 @@ function add9(){
 }
 function add_soma(){
         if(tela.value){
-            tela.value += tela.innerText + soma.innerHTML
+    const operadores = ['+', '-', '*', '/'];
+    const ultimoNumero = tela.value.split(/[\+\-\*\/]/).pop();
+    const ultimoChar = tela.value.slice(-1);
+
+    if (operadores.includes(ultimoChar)) {
+        alert("Não é permitido inserir '+' após um operador.");
+    } else if (!ultimoNumero.includes("%=+")) {
+    tela.value += "+";
+    } else {
+    alert("Esse número já tem um símbolo de porcentagem.");
+    }
         }else{
              window.alert("Escolha um número primeiro")   
         }
 }
 function add_sub(){
         if(tela.value){
-            tela.value += tela.innerText + sub.innerHTML
+    const operadores = ['+', '-', '*', '/'];
+    const ultimoNumero = tela.value.split(/[\+\-\*\/]/).pop();
+    const ultimoChar = tela.value.slice(-1);
+
+    if (operadores.includes(ultimoChar)) {
+        alert("Não é permitido inserir '-' após um operador.");
+    } else if (!ultimoNumero.includes("-")) {
+    tela.value += "-";
+    } else {
+    alert("Esse número já tem um símbolo de porcentagem.");
+    }
         }else{
              window.alert("Escolha um número primeiro")   
         }
 }
 function add_div(){
         if(tela.value){
-            tela.value += tela.innerText + div.value
+    const operadores = ['+', '-', '*', '/'];
+    const ultimoNumero = tela.value.split(/[\+\-\*\/]/).pop();
+    const ultimoChar = tela.value.slice(-1);
+
+    if (operadores.includes(ultimoChar)) {
+        alert("Não é permitido inserir '%' após um operador.");
+    } else if (!ultimoNumero.includes("÷")) {
+    tela.value += "÷";
+    } else {
+    alert("Esse número já tem um símbolo de porcentagem.");
+    }
         }else{
              window.alert("Escolha um número primeiro")   
         }
 }
 function add_multi(){
         if(tela.value){
-            const ultimoNumero = tela.value.split("/[\+\-\*\/]/").pop();
-        if (!ultimoNumero.includes(".")) {
-            tela.value += tela.innerText + multi.value
-        }else{
-                window.alert("O número está incompleto");
-        }
+    const operadores = ['+', '-', '*', '/'];
+    const ultimoNumero = tela.value.split(/[\+\-\*\/]/).pop();
+    const ultimoChar = tela.value.slice(-1);
+
+    if (operadores.includes(ultimoChar)) {
+        alert("Não é permitido inserir 'x' após um operador.");
+    } else if (!ultimoNumero.includes("x")) {
+    tela.value += "x";
+    } else {
+    alert("Esse número já tem um símbolo de porcentagem.");
+    }
         }else{
              window.alert("Escolha um número primeiro")   
         }
 }
 function add_porcent(){
         if(tela.value){
-            const operadores = ['+', '-', '*', '/', '%'];
-        const ultimoNumero = tela.value.split("/[\+\-\*\/\%]/").pop();
-    if (!ultimoNumero.includes(operadores) || !ultimoNumero.includes(".")) {
-        tela.value += porcent.innerText;
+    const operadores = ['+', '-', '*', '/'];
+    const ultimoNumero = tela.value.split(/[\+\-\*\/]/).pop();
+    const ultimoChar = tela.value.slice(-1);
+
+    if (operadores.includes(ultimoChar)) {
+        alert("Não é permitido inserir '%' após um operador.");
+    } else if (!ultimoNumero.includes("%")) {
+    tela.value += "%";
     } else {
-        alert("O número está incompleto");
+    alert("Esse número já tem um símbolo de porcentagem.");
     }
-        }else{
-             window.alert("Escolha um número primeiro")   
-        }
+    }else{
+        window.alert("Escolha um número primeiro")
+    }
 }
 function add_vir(){
     if(tela.value){
@@ -149,16 +183,20 @@ function res(){
         tela.value = tela.value.replace(/x/g, '*')
         tela.value = eval(tela.value)
     }else if(tela.value.includes("%")){
-        
-         if(tela.value.endsWith("%")){
-            tela.value = tela.value.replace(/(\d+)%/g, (match, p1) => `(${p1} / 100)`);
-            tela.value = eval(tela.value)
-         }else if(tela.value.includes("%")){
-            tela.value = tela.value.replace(/(\d+)%/g, (match, p1) => `(${p1} / 100)*`);
-          tela.value = eval(tela.value)
-         }
-        }
-    else{
+
+let expressao = tela.value;
+expressao = expressao.replace(/(\d+)%$/g, (match, p1) => `(${p1} / 100)`);
+expressao = expressao.replace(/(\d+)%(?=[\d\(])/g, (match, p1) => `(${p1} / 100)*`);
+expressao = expressao.replace(/(\d+)%/g, (match, p1) => `(${p1} / 100)`);
+try {
+    let resultado = eval(expressao);
+    tela.value = parseFloat(resultado.toFixed(10));
+} catch (e) {
+    alert("Erro na expressão");
+}
+
+
+}else{
     tela.value = eval(tela.value)
     }
 }
