@@ -102,30 +102,25 @@ function add_multi(){
 }
 function add_porcent(){
         if(tela.value){
-            const ultimoNumero = tela.value.split(/[\+\-\*\/]/).pop();
-        if (!ultimoNumero.includes(".")) {
-            tela.value += tela.innerText + porcent.innerHTML
-        }else{
-                window.alert("O número está incompleto");
-        }
+            const operadores = ['+', '-', '*', '/', '%'];
+        const ultimoNumero = tela.value.split("/[\+\-\*\/\%]/").pop();
+    if (!ultimoNumero.includes(operadores) || !ultimoNumero.includes(".")) {
+        tela.value += porcent.innerText;
+    } else {
+        alert("O número está incompleto");
+    }
         }else{
              window.alert("Escolha um número primeiro")   
         }
 }
 function add_vir(){
     if(tela.value){
-         const ultimoNumero = tela.value.split(/[\+\-\*\/]/).pop(); // pega o último número após o operador
-
+        const ultimoNumero = tela.value.split(/[\+\-\*\/]/).pop();
     if (!ultimoNumero.includes(".")) {
         tela.value += vir.innerText;
     } else {
-        window.alert("Esse número já tem um ponto decimal.");
+        alert("Esse número já tem um ponto decimal.");
     }
-
-        tela.value += tela.innerText + vir.innerHTML
-        while(tela.value = "."){
-            vir.disabled = true
-        }
     }else{
         window.alert("Escolha um número primeiro")
     }
@@ -153,7 +148,16 @@ function res(){
     }else if(tela.value.includes("x")){
         tela.value = tela.value.replace(/x/g, '*')
         tela.value = eval(tela.value)
-    }
+    }else if(tela.value.includes("%")){
+        
+         if(tela.value.endsWith("%")){
+            tela.value = tela.value.replace(/(\d+)%/g, (match, p1) => `(${p1} / 100)`);
+            tela.value = eval(tela.value)
+         }else if(tela.value.includes("%")){
+            tela.value = tela.value.replace(/(\d+)%/g, (match, p1) => `(${p1} / 100)*`);
+          tela.value = eval(tela.value)
+         }
+        }
     else{
     tela.value = eval(tela.value)
     }

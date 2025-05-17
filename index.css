@@ -5,6 +5,7 @@
     justify-self: center;
     box-shadow: 5px 5px 5px #00000088;
     border-radius: 5vw;
+    background-color: rgba(0, 0, 0, 0.123);
 }
 #base_tela{
     height: 10vw;
