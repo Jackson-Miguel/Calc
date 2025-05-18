@@ -12,7 +12,6 @@
     const botoes = document.querySelectorAll("button");
     botoes.forEach(botao => botao.disabled = true);
     on.disabled = false
-    tela.value = 0
   };
 
 function ligar(){
@@ -184,17 +183,16 @@ function res(){
         tela.value = eval(tela.value)
     }else if(tela.value.includes("%")){
 
-let expressao = tela.value;
-expressao = expressao.replace(/(\d+)%$/g, (match, p1) => `(${p1} / 100)`);
-expressao = expressao.replace(/(\d+)%(?=[\d\(])/g, (match, p1) => `(${p1} / 100)*`);
-expressao = expressao.replace(/(\d+)%/g, (match, p1) => `(${p1} / 100)`);
+    let expressao = tela.value;
+    expressao = expressao.replace(/(\d+)%$/g, (match, p1) => `(${p1} / 100)`);
+    expressao = expressao.replace(/(\d+)%(?=[\d\(])/g, (match, p1) => `(${p1} / 100)*`);
+    expressao = expressao.replace(/(\d+)%/g, (match, p1) => `(${p1} / 100)`);
 try {
     let resultado = eval(expressao);
     tela.value = parseFloat(resultado.toFixed(10));
 } catch (e) {
     alert("Erro na expressão");
 }
-
 
 }else{
     tela.value = eval(tela.value)

@@ -1,6 +1,6 @@
 #base{
-    width: 50vw;
-    height: 70vw;
+    width: 35vw;
+    height: 44vw;
     border: 3px solid;
     justify-self: center;
     box-shadow: 5px 5px 5px #00000088;
@@ -9,217 +9,182 @@
 }
 #base_tela{
     height: 10vw;
-    width: 35vw;
+    width: 25vw;
     justify-self: center;
-    margin-top: 7vw;
+    margin-top: 4vw;
     border-radius: 2vw;
 }
 #tela{
     text-align: end;
-    height: 12vw;
-    width: 35vw;
+    height: 9vw;
+    width: 25vw;
     border-radius: 2vw;
     border: 2px solid gray;
     background-color: #80808042;
-    font-size: 7vw;
+    font-size: 6vw;
 }
 #tela:disabled{
       opacity: 1 !important;
       color: black !important;
 }
 #btns_1{
-    margin-top: 6vw;
-    height: 8vw;
+    height: 5vw;
     width: 35vw;
-    justify-self: start;
+    justify-content: center;
     border-radius: 2vw;
-    margin-left: 7vw;
     display: inline-flex;
 }
 #btn_limpar{
-    font-size: 4vw;
+    font-size: 3vw;
     background-color: orangered;
     justify-self: start;
-    height: 8vw;
-    width: 8vw;
+    height: 5vw;
+    width: 5vw;
     border-radius: 2vw;
 }
-#btn_apagar{
-    font-size: 4vw;
+#btn_apagar, #btn_porcent, #btn_div{
+    font-size: 3vw;
     background-color: orangered;
-    margin-left: 1vw;
-    height: 8vw;
-    width: 8vw;
+    justify-self: center;
+    height: 5vw;
+    width: 5vw;
     border-radius: 2vw;
-}
-#btn_porcent{
-    font-size: 4vw;
-    background-color: orangered;
     margin-left: 1vw;
-    height: 8vw;
-    width: 8vw;
-    border-radius: 2vw; 
 }
-#btn_div{
-    font-size: 4vw;
-    background-color: orangered;
-    margin-left: 1vw;
-    height: 8vw;
-    width: 8vw;
-    border-radius: 2vw; 
-}
-
 #btns_2{
     margin-top: 1vw;
-    height: 8vw;
+    height: 5vw;
     width: 35vw;
-    justify-self: start;
+    justify-content: center;
     border-radius: 2vw;
-    margin-left: 7vw;
     display: inline-flex;
-
 }
 #btn_7{
-    font-size: 4vw;
+    font-size: 3vw;
     justify-self: start;
-    height: 8vw;
-    width: 8vw;
+    height: 5vw;
+    width: 5vw;
     border-radius: 2vw;
 }
-#btn_8{
-    font-size: 4vw;
-    margin-left: 1vw;
-    height: 8vw;
-    width: 8vw;
+#btn_8, #btn_9{
+    font-size: 3vw;
+    height: 5vw;
+    width: 5vw;
+    justify-content: center;
     border-radius: 2vw;
-}
-#btn_9{
-    font-size: 4vw;
     margin-left: 1vw;
-    height: 8vw;
-    width: 8vw;
-    border-radius: 2vw; 
 }
 #btn_X{
     font-size: 4vw;
     background-color: orangered;
-    margin-left: 1vw;
-    height: 8vw;
-    width: 8vw;
+    font-size: 3vw;
+    justify-self: center;
+    height: 5vw;
+    width: 5vw;
     border-radius: 2vw; 
+     margin-left: 1vw;
 }
 
 #btns_3{
-    font-size: 4vw;
     margin-top: 1vw;
-    height: 8vw;
+    height: 5vw;
     width: 35vw;
-    justify-self: start;
+    justify-content: center;
     border-radius: 2vw;
-    margin-left: 7vw;
     display: inline-flex;
-
 }
 #btn_4{
-    font-size: 4vw;
+    font-size: 3vw;
     justify-self: start;
-    height: 8vw;
-    width: 8vw;
+    height: 5vw;
+    width: 5vw;
     border-radius: 2vw;
 }
-#btn_5{
-    font-size: 4vw;
-    margin-left: 1vw;
-    height: 8vw;
-    width: 8vw;
+#btn_5, #btn_6{
+    font-size: 3vw;
+    height: 5vw;
+    width: 5vw;
+    justify-content: center;
     border-radius: 2vw;
-}
-#btn_6{
-    font-size: 4vw;
     margin-left: 1vw;
-    height: 8vw;
-    width: 8vw;
-    border-radius: 2vw; 
 }
 #btn_-{
     font-size: 4vw;
     background-color: orangered;
-    margin-left: 1vw;
-    height: 8vw;
-    width: 8vw;
+    font-size: 3vw;
+    justify-self: center;
+    height: 5vw;
+    width: 5vw;
     border-radius: 2vw; 
+     margin-left: 1vw;
 }
 
 #btns_4{
-    font-size: 4vw;
     margin-top: 1vw;
-    height: 8vw;
+    height: 5vw;
     width: 35vw;
-    justify-self: start;
+    justify-content: center;
     border-radius: 2vw;
-    margin-left: 7vw;
     display: inline-flex;
 }
 #btn_1{
-    font-size: 4vw;
+    font-size: 3vw;
     justify-self: start;
-    height: 8vw;
-    width: 8vw;
+    height: 5vw;
+    width: 5vw;
     border-radius: 2vw;
 }
-#btn_2{
-    font-size: 4vw;
-    margin-left: 1vw;
-    height: 8vw;
-    width: 8vw;
+#btn_2, #btn_3{
+    font-size: 3vw;
+    height: 5vw;
+    width: 5vw;
+    justify-content: center;
     border-radius: 2vw;
-}
-#btn_3{
-    font-size: 4vw;
     margin-left: 1vw;
-    height: 8vw;
-    width: 8vw;
-    border-radius: 2vw; 
 }
 #btn_m{
     font-size: 4vw;
     background-color: orangered;
-    margin-left: 1vw;
-    height: 8vw;
-    width: 8vw;
+    font-size: 3vw;
+    justify-self: center;
+    height: 5vw;
+    width: 5vw;
     border-radius: 2vw; 
+     margin-left: 1vw;
 }
 #btns_5{
-    font-size: 4vw;
     margin-top: 1vw;
-    height: 8vw;
+    height: 5vw;
     width: 35vw;
-    justify-self: start;
+    justify-content: center;
     border-radius: 2vw;
-    margin-left: 7vw;
     display: inline-flex;
 }
 #btn_on{
-    font-size: 3vw;
+    font-size: 2vw;
     justify-self: start;
-    height: 8vw;
-    width: 8vw;
+    height: 5vw;
+    width: 5vw;
     border-radius: 2vw;
     word-break: break-all;
 }
-#btn_0{
-    font-size: 4vw;
-    margin-left: 1vw;
-    height: 8vw;
-    width: 8vw;
+#btn_0, #btn_v{
+    font-size: 3vw;
+    height: 5vw;
+    width: 5vw;
+    justify-content: center;
     border-radius: 2vw;
-}
-#btn_v{
-    font-size: 4vw;
     margin-left: 1vw;
-    height: 8vw;
-    width: 8vw;
+}
+#btn_i{
+    font-size: 4vw;
+    background-color: orangered;
+    font-size: 3vw;
+    justify-self: center;
+    height: 5vw;
+    width: 5vw;
     border-radius: 2vw; 
+     margin-left: 1vw;
 }
 #btn_v:disabled{
       opacity: 1 !important;
@@ -232,18 +197,91 @@ button:disabled{
       border-color: black;
       background-color: #80808042;
 }
-#btn_i{
-    font-size: 4vw;
-    background-color: orangered;
-    margin-left: 1vw;
-    height: 8vw;
-    width: 8vw;
-    border-radius: 2vw; 
+@media(max-width: 1000px){
+   #btn_on{
+    font-size: 1.5vw;
+   } 
 }
 @media(max-width: 600px){
 #base{
     width: 40vw;
-    height: 60vw;
+    height: 55vw;
+}
+#btns_1{
+    height: 8vw;
+    width: 30vw;
+    margin-left: 5.7vw;
+}
+#btn_limpar, #btn_apagar, #btn_porcent, #btn_div{
+    font-size: 4vw;
+    height: 7vw;
+    margin-top: 1vw;
+    width: 7vw;
 }
 
+#btns_2{
+    margin-top: 1vw;
+    height: 8vw;
+    width: 30vw;
+    border-radius: 2vw;
+    margin-left: 5.7vw;
+
+}
+#btn_7, #btn_8, #btn_9, #btn_X{
+    font-size: 4vw;
+    height: 7vw;
+    width: 7vw;
+}
+
+#btns_3{
+    font-size: 4vw;
+    height: 8vw;
+    width: 30vw;
+    border-radius: 2vw;
+    margin-left: 5.7vw;
+}
+#btn_4, #btn_5, #btn_6, #btn_-{
+    margin-top: -1vw;
+    font-size: 4vw;
+    height: 7vw;
+    width: 7vw;
+}
+
+#btns_4{
+    font-size: 4vw;
+    height: 8vw;
+    width: 30vw;
+    border-radius: 2vw;
+    margin-left: 5.7vw;
+}
+#btn_1, #btn_2, #btn_3, #btn_m{
+    margin-top: -1.9vw;
+    font-size: 4vw;
+    height: 7vw;
+    width: 7vw;
+    border-radius: 2vw;
+}
+
+#btns_5{
+    font-size: 4vw;
+    height: 8vw;
+    width: 30vw;
+    border-radius: 2vw;
+    margin-left: 5.7vw;
+}
+#btn_on{
+    margin-top: -3vw;
+    font-size: 2vw;
+    height: 7vw;
+    width: 7vw;
+    border-radius: 2vw;
+    word-break: break-all;
+}
+#btn_0, #btn_v, #btn_i{
+    margin-top: -3vw;
+    font-size: 4vw;
+    height: 7vw;
+    width: 7vw;
+    border-radius: 2vw;
+}
 }
