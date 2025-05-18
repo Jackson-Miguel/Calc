@@ -195,7 +195,7 @@ button:disabled{
       opacity: 1 !important;
       color: black !important;
       border-color: black;
-      background-color: #80808042;
+      background-color: #ffffff42;
 }
 @media(max-width: 1000px){
    #btn_on{
