@@ -175,18 +175,22 @@ function apagar(){
 }
 
 function res(){
-    if(tela.value.includes("÷")){
-        tela.value = tela.value.replace(/÷/g, '/')
-        tela.value = eval(tela.value)
-    }else if(tela.value.includes("x")){
-        tela.value = tela.value.replace(/x/g, '*')
-        tela.value = eval(tela.value)
-    }else if(tela.value.includes("%")){
+let expressao = tela.value;
 
-    let expressao = tela.value;
-    expressao = expressao.replace(/(\d+)%$/g, (match, p1) => `(${p1} / 100)`);
-    expressao = expressao.replace(/(\d+)%(?=[\d\(])/g, (match, p1) => `(${p1} / 100)*`);
-    expressao = expressao.replace(/(\d+)%/g, (match, p1) => `(${p1} / 100)`);
+// Substitui operadores personalizados por operadores JS
+expressao = expressao.replace(/÷/g, '/');
+expressao = expressao.replace(/x/g, '*');
+expressao = expressao.replace(/\bde\b/g, '*'); // "20% de 200" → "20% * 200"
+
+// Porcentagem seguida de número ou parênteses (ex: 20%200 ou 5%(6+3))
+expressao = expressao.replace(/(\d+(?:\.\d+)?)%\s*(?=\(?\s*\d)/g, '($1 / 100) * ');
+
+// Porcentagem isolada: 5% → (5 / 100)
+expressao = expressao.replace(/(\d+(?:\.\d+)?)%/g, '($1 / 100)');
+
+// Remove + indevido após * ou / (ex: (5 / 100) * +6)
+expressao = expressao.replace(/([*/])\s*\+/, '$1');
+
 try {
     let resultado = eval(expressao);
     tela.value = parseFloat(resultado.toFixed(10));
@@ -194,7 +198,4 @@ try {
     alert("Erro na expressão");
 }
 
-}else{
-    tela.value = eval(tela.value)
-    }
 }
